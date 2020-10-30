@@ -8,6 +8,9 @@ import 'dart:io';
 import 'package:test/test.dart';
 
 void main() {
+  if (Directory.current.path.endsWith('/test')) {
+    Directory.current = Directory.current.parent;
+  }
   _expect('README.md');
   _expect('pubspec.yaml');
 }
